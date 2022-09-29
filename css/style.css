@@ -212,8 +212,8 @@ button:hover {
 }
 
 .checked {
-    text-decoration: line-through gray 2px;
-    color: gray!important;
+    text-decoration: line-through gray 1px;
+    opacity: .4;
 }
 
 .fa-check {
