@@ -96,7 +96,7 @@ function getInputAndAddItem(eventObject) {
         })
         newCheck.addEventListener("click", function () {
             newListElement.classList.toggle('checked')
-            newTick.classList.toggle('visible')
+            newTick.firstChild.classList.toggle('visible')
         })
     }
     else {
