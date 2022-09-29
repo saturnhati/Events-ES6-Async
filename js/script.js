@@ -29,62 +29,61 @@ function getInputAndAddItem(eventObject) {
     // GETS THE INPUT
     input = document.getElementById('input-item')
     if (input.value !== '') {
-        // CREATES A NEW LI ELEMENT
+        // CREATES A NEW LIST ELEMENT
         let newListElement = document.createElement('li')
-        // CREATES DIV CHECKBOX
+        // CREATES DIV CHECKBOX AND ADDS IT TO THE NEW LIST ELEMENT
         let newCheck = document.createElement('div')
         newCheck.classList.add('checkbox')
         newListElement.appendChild(newCheck)
-        // CREATES CHECK ICON
+        // CREATES CHECK ICON AND ADDS IT TO THE NEW CHECKBOX DIV ELEMENT
         let newTick = document.createElement('span')
-        newTick.innerHTML = '<i id="icon" class="fa-solid fa-check"></i>'
+        newTick.innerHTML = '<i class="fa-solid fa-check"></i>'
         newCheck.appendChild(newTick)
-        // CREATES SPAN TEXT
+        // CREATES TEXT AND ADDS IT TO THE NEW LIST ELEMENT
         let text = document.createElement('span')
+        text.classList.add('list-text')
         newListElement.appendChild(text)
-        // CREATES SPAN BIN 
+        // CREATES BIN ICON SPAN AND ADDS IT TO THE NEW LIST ELEMENT
         let bin = document.createElement('span')
         bin.classList.add('bin')
         bin.innerHTML = '<i class="fa-solid fa-trash"></i>'
         newListElement.appendChild(bin)
-        // PUTS THE INPUT IN THE LI ELEMENT
+        // PUTS THE INPUT IN THE TEXT SPAN ELEMENT
         text.innerHTML += input.value
-        // ADDS A CLASS TO THE LI ELEMENT
+        // ADDS A CLASS TO THE NEW LIST ELEMENT
         newListElement.classList.add('list-element')
-
-
 
         // BOLD TEXT CHECK
         if (bold == true) {
-            newListElement.classList.add('bold')
+            text.classList.add('bold')
         }
         else {
-            newListElement.classList.remove('bold')
+            text.classList.remove('bold')
         }
         // ITALIC TEXT CHECK
         if (italic == true) {
-            newListElement.classList.add('italic')
+            text.classList.add('italic')
         }
         else {
-            newListElement.classList.remove('italic')
+            text.classList.remove('italic')
         }
         // UNDERLINE TEXT CHECK
         if (underline == true) {
-            newListElement.classList.add('underline')
+            text.classList.add('underline')
         }
         else {
-            newListElement.classList.remove('underline')
+            text.classList.remove('underline')
         }
         // HIGHLIGHT TEXT CHECK
         if (highlight == true) {
-            newListElement.classList.add('highlight')
+            text.classList.add('highlight')
         }
         else {
-            newListElement.classList.remove('highlight')
+            text.classList.remove('highlight')
         }
         // COLOR CHECK
         color = document.getElementById('color').value
-        newListElement.style.color = color
+        text.style.color = color
 
         // PRINTS THE LIST ELEMENT IN HTML
         document.getElementById('to-do').appendChild(newListElement);
@@ -97,7 +96,7 @@ function getInputAndAddItem(eventObject) {
         })
         newCheck.addEventListener("click", function () {
             newListElement.classList.toggle('checked')
-            document.getElementById('icon').classList.toggle('visible')
+            newTick.classList.toggle('visible')
         })
     }
     else {

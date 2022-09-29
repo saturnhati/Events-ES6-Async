@@ -183,7 +183,7 @@ button:hover {
 
 .list-element {
     padding: 2px 8px;
-    margin: 2px 0;
+    margin: 12px 0;
 }
 
 #color {
@@ -193,12 +193,16 @@ button:hover {
     background-color: white;
 }
 
+.list-text {
+    padding: 2px 8px;
+}
+
 .checkbox {
     display: inline-block;
     width: 15px;
     height: 15px;
     background-color: white;
-    margin: 0 8px;
+    margin: 0 14px;
     position: relative;
 }
 
