@@ -1,0 +1,213 @@
+GENERAL
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* MENU DROPDOWN */
+
+hr {
+    width: 90%;
+    border: none;
+    border-top: 2px solid #a77fc9;
+    padding-bottom: 6px;
+    margin-bottom: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.menu {
+    background-color: lavender;
+    border-radius: 4px;
+}
+
+.menu p {
+    color: #a77fc9;
+    font-weight: 600;
+    padding: 8px 0;
+    margin-bottom: 0;
+}
+
+.menuAnimation {
+    animation: biggerWord 0.4s linear;
+}
+
+@keyframes biggerWord {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.menu p:hover {
+    cursor: pointer;
+}
+
+.menu-open {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-open a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 8px;
+    opacity: 0;
+}
+
+.menu-open a:hover {
+    text-decoration: underline solid #a77fc9 2px;
+    text-underline-offset: 4px; 
+}
+
+.visible {
+    display: flex;
+}
+
+.dropdown_item1 {
+    transform-origin: top center;
+    animation: scaleZ 300ms ease-in-out 50ms forwards;
+} 
+
+.dropdown_item2 {
+    transform-origin: top center;
+    animation: scaleZ 300ms ease-in-out 100ms forwards;
+} 
+
+.dropdown_item3 {
+    transform-origin: top center;
+    animation: scaleZ 300ms ease-in-out 150ms forwards;
+} 
+
+@keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  80% {
+    transform: scale(1.07);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* FORMAT AND TO DO */
+
+.format {
+    width: 100%;
+    margin: 2vh auto;
+    text-align: center;
+    background-color: lavender;
+    padding: 16px 0;
+    border-radius: 4px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+input {
+    width: 50%;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.text {
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+.to-do {
+    background-color: lavender;
+    padding: 12px 0;
+    border-radius: 4px;
+}
+
+#to-do {
+    text-align: left;
+    margin-left: 30px;
+}
+
+.buttons {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+button {
+    border: none;
+    background-color: white;
+    font-size: 1rem;
+    padding: 4px 8px;
+    border-radius: 3px;
+    box-shadow: -2px -2px 0px inset rgba(0, 0, 0, .2);
+}
+
+button:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.button-true {
+    box-shadow: 2px 2px 0px inset rgba(0, 0, 0, .2);
+}
+
+.list-element {
+    padding: 2px 8px;
+    margin: 2px 0;
+}
+
+#color {
+    width: 34px;
+    height: 26px; 
+    padding: 0;
+    background-color: white;
+}
+
+/* FORMAT CLASSES */
+
+.bold {
+    font-weight: 600;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.highlight {
+   background-color: yellow;
+   border-radius: 4px;
+   color: white;
+   width: fit-content;
+}
