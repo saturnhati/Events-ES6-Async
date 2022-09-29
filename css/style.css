@@ -176,7 +176,9 @@ button:hover {
 }
 
 .button-true {
+    background-color: #a77fc9;
     box-shadow: 2px 2px 0px inset rgba(0, 0, 0, .2);
+    color: white;
 }
 
 .list-element {
@@ -189,6 +191,36 @@ button:hover {
     height: 26px; 
     padding: 0;
     background-color: white;
+}
+
+.checkbox {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    margin: 0 8px;
+    position: relative;
+}
+
+.bin {
+    font-size: 0.8rem;
+    margin: 0 6px;
+}
+
+.checked {
+    text-decoration: line-through gray 2px;
+    color: gray!important;
+}
+
+.fa-check {
+    visibility: hidden;
+    position: absolute;
+    font-size: 1.2rem;
+    top: -2px;
+}
+
+.visible {
+    visibility: visible;
 }
 
 /* FORMAT CLASSES */

@@ -13,8 +13,8 @@ function openMenu() {
 }
 
 // TEST FORMATTER
-let input;
-let color;
+let input
+let color
 let bold = false
 let italic = false
 let underline = false
@@ -31,10 +31,28 @@ function getInputAndAddItem(eventObject) {
     if (input.value !== '') {
         // CREATES A NEW LI ELEMENT
         let newListElement = document.createElement('li')
+        // CREATES DIV CHECKBOX
+        let newCheck = document.createElement('div')
+        newCheck.classList.add('checkbox')
+        newListElement.appendChild(newCheck)
+        // CREATES CHECK ICON
+        let newTick = document.createElement('span')
+        newTick.innerHTML = '<i id="icon" class="fa-solid fa-check"></i>'
+        newCheck.appendChild(newTick)
+        // CREATES SPAN TEXT
+        let text = document.createElement('span')
+        newListElement.appendChild(text)
+        // CREATES SPAN BIN 
+        let bin = document.createElement('span')
+        bin.classList.add('bin')
+        bin.innerHTML = '<i class="fa-solid fa-trash"></i>'
+        newListElement.appendChild(bin)
         // PUTS THE INPUT IN THE LI ELEMENT
-        newListElement.innerText = input.value
+        text.innerHTML += input.value
         // ADDS A CLASS TO THE LI ELEMENT
         newListElement.classList.add('list-element')
+
+
 
         // BOLD TEXT CHECK
         if (bold == true) {
@@ -70,8 +88,17 @@ function getInputAndAddItem(eventObject) {
 
         // PRINTS THE LIST ELEMENT IN HTML
         document.getElementById('to-do').appendChild(newListElement);
+
         // EMPTIES THE INPUT
         input.value = ''
+
+        bin.addEventListener("click", function () {
+            document.getElementById('to-do').removeChild(newListElement);
+        })
+        newCheck.addEventListener("click", function () {
+            newListElement.classList.toggle('checked')
+            document.getElementById('icon').classList.toggle('visible')
+        })
     }
     else {
         // ERROR IF THERE IS NO TEXT WRITTEN
